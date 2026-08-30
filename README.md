@@ -1,2 +1,2 @@
 # gabrielcuesta.github.io
-Mi web personal
+Vamos a trabajar en una web personal muy sencilla hospedada en github pages.
