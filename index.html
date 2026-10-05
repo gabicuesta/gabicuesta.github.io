@@ -191,6 +191,12 @@
       gap: 1.4rem;
     }
 
+    .portal-group {
+      display: inline-flex;
+      align-items: center;
+      gap: .7rem;
+    }
+
     /* Driving game portal */
     .game-portal {
       display: inline-flex;
@@ -222,6 +228,26 @@
       filter: drop-shadow(0 0 3px rgba(130, 170, 255, .35));
       transform: scale(1.06);
     }
+
+    .ghost-portal {
+      border-color: rgba(116, 105, 170, .48);
+      background: linear-gradient(145deg, rgba(20, 25, 49, .96), rgba(12, 18, 36, .96));
+      box-shadow:
+        inset 0 0 16px rgba(123, 103, 205, .025),
+        0 0 10px rgba(100, 85, 180, .035);
+    }
+    .ghost-portal .gi { stroke: #7C86B6; }
+    .ghost-portal:hover {
+      border-color: rgba(164, 145, 235, .86);
+      background: linear-gradient(145deg, rgba(31, 31, 61, .98), rgba(17, 20, 42, .98));
+      box-shadow:
+        inset 0 0 18px rgba(143, 122, 230, .06),
+        0 0 18px rgba(118, 96, 215, .12);
+    }
+    .ghost-portal:hover .gi {
+      stroke: #C0B8F4;
+      filter: drop-shadow(0 0 3px rgba(164, 145, 235, .32));
+    }
     .gi {
       width: 31px;
       height: 31px;
@@ -243,6 +269,11 @@
       background: var(--red);
       border-radius: 50%;
       animation: blink 2.4s ease-in-out infinite;
+    }
+
+    .dot-ghost {
+      background: #8F3440;
+      animation-delay: .7s;
     }
     @keyframes blink {
       0%,100% { opacity: 1; transform: scale(1); }
@@ -309,21 +340,37 @@
   <!-- ── GAMES (cryptic) ──────────────── -->
   <section class="lab">
     <div class="lab-row">
-      <a class="game-portal"
-         href="https://gabicuesta.itch.io/madriz-riders"
-         target="_blank"
-         rel="noopener"
-         aria-label="Jugar a MADriz Riders">
-        <span class="dot"></span>
-        <!-- Steering wheel: driving videogame -->
-        <svg class="gi" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <circle cx="16" cy="16" r="11.5"/>
-          <circle cx="16" cy="16" r="2.8"/>
-          <path d="M5.2 13.2c3.8 1.2 7.3.4 10.8-1.4 3.5 1.8 7 2.6 10.8 1.4"/>
-          <path d="M8.3 20.2c2.7-.8 5.1.2 6.1 2.4.6 1.4.7 3 .4 4.6"/>
-          <path d="M23.7 20.2c-2.7-.8-5.1.2-6.1 2.4-.6 1.4-.7 3-.4 4.6"/>
-        </svg>
-      </a>
+      <div class="portal-group">
+        <a class="game-portal"
+           href="https://gabicuesta.itch.io/madriz-riders"
+           target="_blank"
+           rel="noopener"
+           aria-label="Jugar a MADriz Riders">
+          <span class="dot"></span>
+          <!-- Steering wheel: driving videogame -->
+          <svg class="gi" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="16" cy="16" r="11.5"/>
+            <circle cx="16" cy="16" r="2.8"/>
+            <path d="M5.2 13.2c3.8 1.2 7.3.4 10.8-1.4 3.5 1.8 7 2.6 10.8 1.4"/>
+            <path d="M8.3 20.2c2.7-.8 5.1.2 6.1 2.4.6 1.4.7 3 .4 4.6"/>
+            <path d="M23.7 20.2c-2.7-.8-5.1.2-6.1 2.4-.6 1.4-.7 3-.4 4.6"/>
+          </svg>
+        </a>
+
+        <a class="game-portal ghost-portal"
+           href="https://spectrumcomputing.co.uk/entry/34324/ZX-Spectrum/Flappy_the_Ghost"
+           target="_blank"
+           rel="noopener"
+           aria-label="Proyecto misterioso: Flappy the Ghost">
+          <span class="dot dot-ghost"></span>
+          <!-- Ghost: mysterious retro game -->
+          <svg class="gi" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M7 26V14.5C7 8.7 10.7 5 16 5s9 3.7 9 9.5V26l-4-3-3 3-3-3-3 3-5-3.8"/>
+            <circle cx="12.5" cy="14" r="1.2"/>
+            <circle cx="19.5" cy="14" r="1.2"/>
+          </svg>
+        </a>
+      </div>
       <span class="lab-meta">01 &mdash; &bull; &bull; &bull;</span>
     </div>
   </section>
