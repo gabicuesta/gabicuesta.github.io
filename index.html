@@ -66,8 +66,13 @@
     .nav-links {
       display: flex;
       gap: 0.5rem;
+      flex-shrink: 0;
     }
     .nav-link {
+      display: inline-flex;
+      align-items: center;
+      white-space: nowrap;
+      line-height: 1.4;
       font-family: var(--head);
       font-size: 0.78rem;
       font-weight: 500;
@@ -252,6 +257,31 @@
       stroke: #C0B8F4;
       filter: drop-shadow(0 0 3px rgba(164, 145, 235, .32));
     }
+    .block-portal {
+      border-color: rgba(84, 156, 150, .50);
+      background: linear-gradient(145deg, rgba(15, 31, 45, .96), rgba(10, 21, 34, .96));
+      box-shadow:
+        inset 0 0 16px rgba(80, 200, 180, .025),
+        0 0 10px rgba(70, 180, 165, .035);
+    }
+    .block-portal .gi { stroke: #6FA6A6; }
+    .block-portal:hover {
+      border-color: rgba(120, 222, 200, .86);
+      background: linear-gradient(145deg, rgba(18, 44, 58, .98), rgba(11, 27, 40, .98));
+      box-shadow:
+        inset 0 0 18px rgba(110, 220, 200, .06),
+        0 0 18px rgba(90, 210, 185, .12);
+    }
+    .block-portal:hover .gi {
+      stroke: #A8F0DF;
+      filter: drop-shadow(0 0 3px rgba(120, 222, 200, .32));
+      transform: rotate(90deg);
+    }
+    .dot-block {
+      background: #2E8C7E;
+      animation-delay: 1.4s;
+    }
+
     .gi {
       width: 31px;
       height: 31px;
@@ -294,7 +324,19 @@
 
     /* ── Responsive ───────────────────── */
     @media (max-width: 680px) {
-      nav  { padding: 1.2rem 1.2rem; }
+      nav  { padding: 1.1rem 1.2rem; gap: 0.8rem; }
+      .logo {
+        min-width: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        font-size: 0.7rem;
+      }
+      .nav-links { gap: 0.4rem; }
+      .nav-link {
+        font-size: 0.72rem;
+        padding: 0.42rem 0.7rem;
+      }
       main { padding: 0 1.2rem 4rem; }
       .hero {
         grid-template-columns: 1fr;
@@ -375,6 +417,22 @@
             <path d="M7 26V14.5C7 8.7 10.7 5 16 5s9 3.7 9 9.5V26l-4-3-3 3-3-3-3 3-5-3.8"/>
             <circle cx="12.5" cy="14" r="1.2"/>
             <circle cx="19.5" cy="14" r="1.2"/>
+          </svg>
+        </a>
+
+        <a class="game-portal block-portal"
+           href="https://gabrielcuesta.com/bloqtrix/"
+           target="_blank"
+           rel="noopener"
+           aria-label="Jugar a Bloqtrix">
+          <span class="dot dot-block"></span>
+          <!-- T tetromino: falling-blocks game -->
+          <svg class="gi" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="5.5" y="9" width="7" height="7" rx="1"/>
+            <rect x="12.5" y="9" width="7" height="7" rx="1"/>
+            <rect x="19.5" y="9" width="7" height="7" rx="1"/>
+            <rect x="12.5" y="16" width="7" height="7" rx="1"/>
+            <path d="M8 11.5h2M15 11.5h2M22 11.5h2M15 18.5h2" stroke-width="1.2" opacity=".55"/>
           </svg>
         </a>
       </div>
